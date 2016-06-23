@@ -202,29 +202,10 @@ int main (int argc, char *argv[])
       }
 
       //----------------------------------------------------------------------------------------------------------------
-    /*  std::cout << "Linea=" <<linea<< std::endl;
-      std::cout << "paridad=" <<linea%2<< std::endl;
-      std::cout << "instruccion_bin=" <<instruccion_bin<< std::endl;
-      std::cout << "offset10=" <<offset10<< std::endl;
-      std::cout << "tag10=" <<tag10<< std::endl;
-      std::cout << "cacheCPU0[index10][offset10]=" <<cacheCPU0[index10][offset10]<< std::endl;
-      std::cout << "cacheCPU1[index10][offset10]=" <<cacheCPU1[index10][offset10]<< std::endl;
-      std::cout << "tamano tag=" <<tamano_tag<< std::endl;
-      std::cout << "tamano index=" <<tamano_index<< std::endl;
-      std::cout << "tamano offset=" <<tamano_offset<< std::endl;
-      std::cout << "tag2=" <<tag2<< std::endl;
-      std::cout << "index2=" <<index2<< std::endl;
-      std::cout << "offset2=" <<offset2<< std::endl;
-      // for (int z=0;z<tamano_bloque;z++){
-      //    std::cout << "tag" <<cacheCPU0[index10][z]<< std::endl;; //se lee el dato de la memoria principal
-      //  }
-      std::cout << "estado CPU0:" <<cacheCPU0[index10][CPU0_col-2]<< cacheCPU0[index10][CPU0_col-1]<< std::endl;
-      std::cout << "estado CPU1:" <<cacheCPU1[index10][CPU1_col-2]<< cacheCPU1[index10][CPU1_col-1]<< std::endl;
-      cout << "HITS = " <<rhit<< endl;
-      cout << "R MISS = " <<rmiss<< endl;
-      cout << "W MISS = " <<wmiss<< endl;*/
-      //std::cout << "----------------------------------------------------------------------" << std::endl;
+    
       //---------------------------------------------------------------------------------------------------------------
+
+
     //SE ACTUALIZA MAQUINA DE ESTADOS
     int currentStateCPU0[2] = {cacheCPU0[index10][CPU0_col-2], cacheCPU0[index10][CPU0_col-1]};
     int currentStateCPU1[2] = {cacheCPU1[index10][CPU1_col-2], cacheCPU1[index10][CPU1_col-1]};
@@ -278,17 +259,21 @@ int main (int argc, char *argv[])
 
 
 //____________________________________________________________________________________________________________________________________________
+
+if(linea>=49642118){
+  std::cout << "Linea:" <<linea<< std::endl;
+  //std::cout << "estado CPU0:" <<cacheCPU0[index10][CPU0_col-2]<< cacheCPU0[index10][CPU0_col-1]<< std::endl;
+  //std::cout << "estado CPU1:" <<cacheCPU1[index10][CPU1_col-2]<< cacheCPU1[index10][CPU1_col-1]<< std::endl;
+  std::cout << "Estado cpu0:" <<cacheCPU0[index10][CPU0_col-2]<<cacheCPU0[index10][CPU0_col-1]<< std::endl;
+  std::cout << "Estado cpu1:" <<cacheCPU1[index10][CPU1_col-2]<<cacheCPU1[index10][CPU1_col-1]<< std::endl;
+}
+
+
+
     instruccion_hexa="";
     instruccion_bin="";
     linea+=1;
 
-    if(linea>=49642116){
-      std::cout << "Linea:" <<linea<< std::endl;
-      std::cout << "estado CPU0:" <<cacheCPU0[index10][CPU0_col-2]<< cacheCPU0[index10][CPU0_col-1]<< std::endl;
-      std::cout << "estado CPU1:" <<cacheCPU1[index10][CPU1_col-2]<< cacheCPU1[index10][CPU1_col-1]<< std::endl;
-      std::cout << "Siguiente estado cpu0=" <<cacheCPU0[index10][CPU0_col-2]<<cacheCPU0[index10][CPU0_col-1]<< std::endl;
-      std::cout << "Siguiente estado cpu1=" <<cacheCPU1[index10][CPU1_col-2]<<cacheCPU1[index10][CPU1_col-1]<< std::endl;
-    }
         }
     if(ficheroEntrada.eof()){
      // std::cout << "Final del archivo" << std::endl;
