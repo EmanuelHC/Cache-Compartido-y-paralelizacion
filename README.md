@@ -21,7 +21,7 @@ COMPILACIÓN Y EJECUCIÓN
 El proyecto consta de los archivos cache.cpp, cache.h, criba.cpp, cribaMPI.cpp y Makefile. Para compilar y ejecutar el proyecto, en la misma carpeta que contiene los archivos cache.cpp, cache.h, criba.cpp, cribaMPI.cpp y Makefile (asumiendo que el archivo .trace también se encuentra en esta carpeta), se deben seguir los siguentes pasos, en una terminal de linux:
 
 Para compilar el cache:
-$ make -f cache.make
+$ g++ -std=c++11 -o cache main.cpp cache.cpp
 Para ejecutar el cache:
 $./cache
 Para compilar la criba secuencial sin paralelizar:
