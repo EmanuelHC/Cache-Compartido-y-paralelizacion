@@ -11,9 +11,7 @@
 #include <ctime>
 #include <ratio>
 #include <chrono>
-#define TIME_SECS 25 
-#define BLOCK_LOW(id,p,n) ((id)*(n)/(p))
-#define BLOCK_SIZE(id,p,n) (BLOCK_LOW(((id)+1),p,n)-BLOCK_LOW(id,p,n))
+#define TIME_SECS 1.5 
 
 //#include <random>
 using namespace std;
@@ -30,8 +28,8 @@ bool criba(int tam,int  argc, char* argv[]){
     int id, proc;     
     MPI_Init(&argc,&argv);
     MPI_Barrier(MPI_COMM_WORLD); //Se inicia una barrier para que todos los procesos inicien en sincronia
-    MPI_Comm_rank(MPI_COMM_WORLD,&id);
-    MPI_Comm_size(MPI_COMM_WORLD,&proc);
+    MPI_Comm_rank(MPI_COMM_WORLD,&id); //id del proceso
+    MPI_Comm_size(MPI_COMM_WORLD,&proc); // proc es el numero de procesos
     
   high_resolution_clock::time_point t1 = high_resolution_clock::now();
     
@@ -74,17 +72,9 @@ bool criba(int tam,int  argc, char* argv[]){
 
 int main(int  argc, char* argv[]){
   
-   
   criba(48615,argc,argv);
   
-//-------------------------------------------------------------------------------
- // high_resolution_clock::time_point t2 = high_resolution_clock::now();
- // duration<double> time_span = duration_cast<duration<double>>(t2 - t1);
- // cout << "Tiempo del ejecucion " << time_span.count() << " segundos." << endl;
-//------------------------------------------------------------------------------
- 
   return 0;
  
- 
-  //MPI_Finalize();
+
 }
