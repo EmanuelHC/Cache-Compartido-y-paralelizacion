@@ -11,7 +11,7 @@
 #include <ctime>
 #include <ratio>
 #include <chrono>
-#define TIME_SECS 1.5 
+#define TIME_SECS 10 
 
 //#include <random>
 using namespace std;
