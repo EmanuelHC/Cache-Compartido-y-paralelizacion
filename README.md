@@ -1,0 +1,1 @@
+# Cache-Compartido-y-paralelizacion
